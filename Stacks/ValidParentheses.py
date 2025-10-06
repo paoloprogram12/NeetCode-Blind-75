@@ -28,7 +28,13 @@ class Solution:
             return False
         
 def main():
-    print("sup world")
+    test = "({[]})"
+    fort = Solution()
+    result = fort.isValid(test)
+    print(result)
+    test= "(()"
+    result = fort.isValid(test)
+    print(result)
 
 if __name__ == "__main__":
     main()
