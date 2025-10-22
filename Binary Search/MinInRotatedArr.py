@@ -2,7 +2,8 @@ from typing import List
 
 class Solution:
     def findMIn(self, nums: List[int]) ->int:
-        left = 0, right = len(nums) - 1
+        left = 0
+        right = len(nums) - 1
         result = nums[0]
 
         while left <= right:
