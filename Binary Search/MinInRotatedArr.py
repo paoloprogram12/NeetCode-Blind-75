@@ -2,7 +2,21 @@ from typing import List
 
 class Solution:
     def findMIn(self, nums: List[int]) ->int:
-        return ...
+        left = 0, right = len(nums) - 1
+        result = nums[0]
+
+        while left <= right:
+            if nums[left] < nums[right]:
+                result = min(result, nums[left]) # gets the minimum number between the two values
+                break
+
+            mid = (left + right) // 2
+            result = min(result, nums[mid])
+            if nums[mid] >= nums[left]:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return result
     
 # recursive binary search
 # also has to be sorted first
@@ -19,6 +33,8 @@ class Search:
                 return self.binSearch(arr, target, mid + 1, high)
         
 def main():
+
+    # binary search test
     s = Search()
     arr = [1, 7, 14, 32, 8, 6, 7, 67, 43, 2]
     arr.sort()
